@@ -1,0 +1,11 @@
+HTML Tags Used:
+- <nav>, <ul>, <li>, <a>, <img>, <section>, <p>, <h1>, <button>, <script>
+
+CSS Properties Used:
+- color, margin, padding, font-size, line-height
+
+Bootstrap:
+- Used Bootstrap navbar and buttons for responsive navigation and styling.
+
+JavaScript:
+- Added a button with `onclick` that shows an alert message to enhance interactivity.

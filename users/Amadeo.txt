@@ -1,0 +1,5 @@
+ID: user_68542c2437fc9
+Username: Amadeo
+Email: timeaintexists@gmail.com
+Password: $2y$10$zWSPrSasiKB7yq9RIIpylO3XqlhVWJeKXzefkNcxlGpJfJL/Je9m.
+Registered At: 2025-06-19 15:26:28

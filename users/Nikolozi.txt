@@ -1,0 +1,5 @@
+ID: user_68542cc87c76a
+Username: Nikolozi
+Email: testtest123@gmail.com
+Password: $2y$10$Sua9B0xavcQBUA83XJtBa.CJPxxaaTPbiNuojD8qln8CgjmlPpuoO
+Registered At: 2025-06-19 15:29:12

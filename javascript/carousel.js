@@ -150,47 +150,47 @@ document.addEventListener("DOMContentLoaded", function () {
     all: [
       {
         name: "Cappuccino",
-        image: "/img/coffee-cup-cappuccino-1.png",
+        image: "./img/coffee-cup-cappuccino-1.png",
         category: "espresso",
       },
       {
         name: "Americano",
-        image: "/img/coffee-cup-americano-1.png",
+        image: "./img/coffee-cup-americano-1.png",
         category: "black",
       },
       {
         name: "Espresso",
-        image: "/img/coffee-cup-espresso-1.png",
+        image: "./img/coffee-cup-espresso-1.png",
         category: "espresso",
       },
       {
         name: "Latte",
-        image: "/img/coffee-cup-latte-1.png",
+        image: "./img/coffee-cup-latte-1.png",
         category: "espresso",
       },
       {
         name: "Black Coffee",
-        image: "/img/coffee-cup-black-1.png",
+        image: "./img/coffee-cup-black-1.png",
         category: "black",
       },
       {
         name: "Doppio",
-        image: "/img/coffee-cup-doppio-1.png",
+        image: "./img/coffee-cup-doppio-1.png",
         category: "dopio",
       },
       {
         name: "Macchiato",
-        image: "/img/coffee-cup-macchiato-1.png",
+        image: "./img/coffee-cup-macchiato-1.png",
         category: "espresso",
       },
       {
         name: "Lungo",
-        image: "/img/coffee-cup-lungo-1.png",
+        image: "./img/coffee-cup-lungo-1.png",
         category: "black",
       },
       {
         name: "Romano",
-        image: "/img/coffee-cup-americano-1.png",
+        image: "./img/coffee-cup-americano-1.png",
         category: "dopio",
       },
     ],
@@ -222,6 +222,29 @@ document.addEventListener("DOMContentLoaded", function () {
     updateButtonStates();
   }
 
+  // Function to handle image loading errors
+  function handleImageError(img, itemName) {
+    // Hide the image instead of showing a broken placeholder
+    img.style.display = "none";
+
+    // Or you could show a text-based placeholder
+    const placeholder = document.createElement("div");
+    placeholder.className = "image-placeholder";
+    placeholder.textContent = itemName;
+    placeholder.style.cssText = `
+      width: 100%;
+      height: 150px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 14px;
+      border-radius: 8px;
+    `;
+    img.parentNode.insertBefore(placeholder, img);
+  }
+
   // Function to display current page of items
   function displayItems() {
     const startIndex = currentPage * itemsPerPage;
@@ -236,12 +259,16 @@ document.addEventListener("DOMContentLoaded", function () {
       coffeeCard.innerHTML = `
                 <img src="${
                   item.image
-                }" alt="${item.name.toLowerCase()}" class="items-coffee--image small-image" onerror="this.src='/img/coffee-placeholder.png'">
+                }" alt="${item.name.toLowerCase()}" class="items-coffee--image small-image">
                 <p class="items-coffee--description">${item.name}</p>
                 <a href="#" class="items-order" data-coffee="${
                   item.name
                 }">Order Now</a>
             `;
+
+      // Add error handling for images
+      const img = coffeeCard.querySelector("img");
+      img.addEventListener("error", () => handleImageError(img, item.name));
 
       // Add fade-in animation
       coffeeCard.style.opacity = "0";
@@ -389,5 +416,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set first filter as active
   if (filterLinks.length > 0) {
     filterLinks[0].classList.add("active");
+  }
+});
+
+//Mobile Menu Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (mobileNavToggle && mainNav) {
+    mobileNavToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("active");
+    });
   }
 });

@@ -176,17 +176,6 @@ include 'partials/header.php'; ?>
    <?php include 'partials/footer.php'; ?>
 
     <script src="javascript/carousel.js">
-        //Mobile Menu Toggle
-            document.addEventListener('DOMContentLoaded', function() {
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const mainNav = document.querySelector('.main-nav');
-
-        if (mobileNavToggle && mainNav) {
-          mobileNavToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-          });
-        }
-      });
     </script>
   </body>
 </html>

@@ -17,7 +17,7 @@ $isLoggedIn = isset($_SESSION['user']);
     />
     <link rel="stylesheet" href="css/style.css" />
     <title>Caffeine</title>
-<link rel="icon" href="img/caffeine_icon.ico" type="image/x-icon">
+    <link rel="icon" href="img/caffeine_icon.ico" type="image/x-icon">
   </head>
   <body>
     <header class="header">
